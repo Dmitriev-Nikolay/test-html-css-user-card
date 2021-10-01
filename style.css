@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css?family=Krub:400,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #8e0e00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1f1c18, #8e0e00); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Krub", sans-serif;
+}
+
+.card {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 450px;
+  border-radius: 20px;
+  box-shadow: 8px 8px 30px #790c00, -8px -8px 30px #a31000;
+  background: #1f1c18;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.card .ds-top {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #b71c1c;
+  -webkit-animation: dsTop 1.5s;
+  animation: dsTop 1.5s;
+}
+
+.card .avatar-holder {
+  position: absolute;
+  margin: auto;
+  top: 40px;
+  right: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 5px #151515, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000,
+    inset 0 0 0 5px #000000;
+  box-shadow: 0 0 0 5px #151515, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000,
+    inset 0 0 0 5px #000000;
+  background: white;
+  overflow: hidden;
+  -webkit-animation: mvTop 1.5s;
+  animation: mvTop 1.5s;
+}
+
+.card .avatar-holder img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.card .name {
+  position: absolute;
+  margin: auto;
+  top: -60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: inherit;
+  height: 40px;
+  text-align: center;
+  -webkit-animation: fadeIn 2s ease-in;
+  animation: fadeIn 2s ease-in;
+}
+
+.card .name h1 {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card .name h1:hover {
+  color: crimson;
+  cursor: pointer;
+}
+
+.card .name h5 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 30px;
+  color: white;
+  width: 100px;
+}
+
+.card .button {
+  position: absolute;
+  margin: auto;
+  padding: 8px;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: inherit;
+  height: 40px;
+  text-align: center;
+  -webkit-animation: fadeIn 2s ease-in;
+  animation: fadeIn 2s ease-in;
+  outline: none;
+}
+
+.card .button a {
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  font-size: 10px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.card .button a:hover {
+  color: white;
+  background: crimson;
+}
+
+.card .ds-info {
+  position: absolute;
+  margin: auto;
+  top: 110px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: inherit;
+  height: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card .ds-info .pens,
+.card .ds-info .projects,
+.card .ds-info .posts {
+  position: relative;
+  left: -300px;
+  width: calc(300px / 3);
+  text-align: center;
+  color: white;
+  -webkit-animation: fadeInMove 2s;
+  animation: fadeInMove 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.infinity {
+  position: relative;
+  width: 66px;
+  height: 80px;
+}
+
+.infinity:before,
+.infinity:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 34px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 10px 10px 0 10px;
+  transform: rotate(-45deg);
+}
+
+.infinity:after {
+  left: auto;
+  right: 0;
+  border-radius: 10px 10px 10px 0;
+  transform: rotate(45deg);
+}
+
+.card .ds-info .pens h6,
+.card .ds-info .projects h6,
+.card .ds-info .posts h6 {
+  text-transform: uppercase;
+  color: crimson;
+  font-size: 12px;
+}
+
+.card .ds-info .pens p,
+.card .ds-info .projects p,
+.card .ds-info .posts p {
+  font-size: 16px;
+}
+
+.card .ds-info .ds:nth-of-type(2) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.card .ds-info .ds:nth-of-type(1) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.card .ds-skill {
+  position: absolute;
+  margin: auto;
+  bottom: 5px;
+  right: 0;
+  left: 0;
+  width: 300px;
+  height: 130px;
+  -webkit-animation: mvBottom 1.5s;
+  animation: mvBottom 1.5s;
+}
+
+.card .ds-skill h6 {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: crimson;
+}
+
+.card .ds-skill .skill h6 {
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  margin: 4px 0;
+  color: white;
+}
+
+.card .ds-skill .skill .fab {
+  color: crimson;
+  font-size: 12px;
+}
+
+.card .ds-skill .skill .bar {
+  height: 5px;
+  background: #b71c1c;
+  text-align: right;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.card .ds-skill .skill .bar p {
+  color: white;
+  font-size: 9px;
+  padding-top: 8px;
+  -webkit-animation: fadeIn 5s;
+  animation: fadeIn 5s;
+}
+
+.card .ds-skill .skill .bar:hover {
+  background: white;
+}
+
+.card .ds-skill .skill .bar-html {
+  width: 100%;
+  -webkit-animation: htmlSkill 1s;
+  animation: htmlSkill 1s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.card .ds-skill .skill .bar-css {
+  width: 100%;
+  -webkit-animation: cssSkill 2s;
+  animation: cssSkill 2s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.card .ds-skill .skill .bar-js {
+  width: 100%;
+  -webkit-animation: jsSkill 3s;
+  animation: jsSkill 3s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+@-webkit-keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    left: -300px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    left: -300px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes htmlSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes htmlSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes cssSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes cssSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes jsSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes jsSkill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes mvBottom {
+  0% {
+    bottom: -150px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+
+@keyframes mvBottom {
+  0% {
+    bottom: -150px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+
+@-webkit-keyframes mvTop {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 40px;
+  }
+}
+
+@keyframes mvTop {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 40px;
+  }
+}
+
+@-webkit-keyframes dsTop {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes dsTop {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.following {
+  color: white;
+  background: crimson;
+}
+/*# sourceMappingURL=style.css.map */
